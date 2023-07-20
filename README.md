@@ -1,4 +1,4 @@
-## **Nonlinear equation params. estimation**
+<h2><div align="center"> Nonlinear equation params. estimation </div></h2>
 
 <Details>
 <Summary> <i>Tools:</i> </Summary>
@@ -20,7 +20,7 @@
 
 <Summary> <i>Repo Visualization:</i> </Summary>
 
-[![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FNon-linear-eq-parameter-estimation-Samplings)
+[![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FNon-linear-eq-parameter-estimation-Samplings) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/nonlinear-eq_estimation.ipynb)
 
 <img src="diagram.svg" width="280" height="280"><br><br>
 
@@ -47,7 +47,7 @@ Using [`fsolve`](#README.md#References) to solve for non-linear equations system
 
 $F(X)$ = ${Pr}(a \leq X \leq b)$:
 
-<i>Analytical tests should be performed to validate $f(x)$ $\&$ the obtained params:</i>
+<i>Analytical tests should be performed to validate $f(x)$ & the obtained params:</i>
 
 
 $$F(X) = \int_{a}^{b} f(x) dx$$ 
@@ -102,7 +102,7 @@ Where $\hat{F}^{N}$ can be modelled with samplings from $N$ random variables $X 
 
 ![MC](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/MC.jpg)<br>
 
-<i>(See [Nbrender]())</i>
+<i>(See [nbrender]())</i>
 ![Samplings](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/MC_Samplings.png)
 
 
