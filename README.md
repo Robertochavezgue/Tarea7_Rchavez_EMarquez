@@ -16,9 +16,9 @@
 
 <Details>
 
-<a name ="repo-visualization"></a>
-
 <Summary> <i>Repo Visualization:</i> </Summary>
+
+<a name ="repo-visualization"></a>
 
 [![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FNon-linear-eq-parameter-estimation-Samplings) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/nonlinear-eq_estimation.ipynb)
 
@@ -40,10 +40,51 @@
 
 ## **Description:**
 
-![Description](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/Description.jpg)
+From $n$ non-linear equations with $x_{1},..., x_n$ unknown variables a multivariate system of nonlinear equations with 
+dimensional compatibility can be expressed: <br>
 
+[gh-app](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/Description.jpg)
 
-Using [`fsolve`](#README.md#References) to solve for non-linear equations systems to estimate params. for distributions $f(x)$, to obtain:
+<div class="alert alert-block alert-info">
+
+$f_1(x_1,x_2,...,x_n) = 0$ <br>
+$f_2(x_1,x_2,...,x_n) = 0$ <br>
+$\vdots$ <br>
+$f_n(x_1,x_2,...,x_n) = 0$ <br>
+
+A common method of approximatation for the solutions of $x_1,x_2,...,x_n$ is [Newthon's](README.md#References) method with the roots of terms ${ }_{1,2}$ of the [Taylor series](README.md#References) expansion:<br>
+$f(x) = f(x_n) + f'(x_n)(x-x_n) + \frac{f''(x_n)}{2!}(x-x_n)^2 +\cdots + \frac{f^{n}(x_n)}{n!}(x-x_n)^n$ = 0<br>
+$f(x) = f(x_n) + f'(x_n)(x-x_n) = 0$ <br>
+
+Generalizing for $n$ variables, we have: <br>
+$x_{n+1} = x_n - \frac{f(x_i)}{f'(x_i)} = x_n - J(x)^{-1} \cdot f(x_i)$ <br>
+
+The [Jacobian](README.md#References) matrix is obtained by taking the first derivative of each function with respect to each variable. <br>
+
+$$
+J(x) = \begin{bmatrix}
+\frac{\partial f_1}{\partial x_1} & \frac{\partial f_1}{\partial x_2} & \cdots & \frac{\partial f_1}{\partial x_n} \\
+\frac{\partial f_2}{\partial x_1} & \frac{\partial f_2}{\partial x_2} & \cdots & \frac{\partial f_2}{\partial x_n} \\
+\vdots & \vdots & \ddots & \vdots \\
+\frac{\partial f_n}{\partial x_1} & \frac{\partial f_n}{\partial x_2} & \cdots & \frac{\partial f_n}{\partial x_n} \\
+\end{bmatrix}
+$$
+
+$\therefore$ the equation is rewritten with $x_n$ and $f(x_i)$ as vectors evaluated in $x_n$:<br> 
+$x_n = [x_1, x_2, ..., x_n]^T$ <br>
+$f(x_i) = [f_1(x_1,x_2,...,x_n)$, $f_2(x_1,x_2,...,x_n)$, $\cdots$ , $f_n(x_1,x_2,...,x_n)]^T$<br>
+
+So iteration $1$ of a Newton-Raphson method is constructed for a multivariate system of nonlinear equations:<br>
+  
+<div align="right">
+
+<i> (see [refs.](README.md#Referencess) for more info.) </i> 
+</div>
+
+<i> The solution is found when $|x_{n+1} \pm x_n| \approx 0$. </i>
+<br><br>
+
+Using [`fsolve`](README.md#References) to solve for non-linear equations systems to estimate params. for distributions $f(x)$, to obtain:
 
 $F(X)$ = ${Pr}(a \leq X \leq b)$:
 
@@ -100,11 +141,44 @@ Where $\hat{F}^{N}$ can be modelled with samplings from $N$ random variables $X 
 
 + Montecarlo Estimation:<br>
 
-![MC](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/MC.jpg)<br>
+[gh-app](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/MC.jpg)<br>
 
-<i>(See [nbrender]())</i>
+<div class="alert alert-block alert-info">
+
+if $V$ is the volume of an integral 
+
+$$V = \int_{a}^{b} f(x) dx$$
+   
+and it follows a uniform prob. density function $f(x)$ $X \sim U(a,b)$ it can be modelled with `np.random.uniform`.<br>
+
+$f(x) = \frac{1}{b-a}$ if $a \leq x \leq b$ <br>
+$0$ otherwise
+
+<i>Nevertheless if the distribution isn't known it must be obtained from data or modelled with another method.</i>
+
+From where we've got by the definition the expectancy:<br>
+
+$$E[X] = \int_{a}^{b} x f(x) dx$$
+
+Then, the mean of $x_{i}$ in $V$ is:
+
+$$F = \frac{V}{N} \sum_{i=0}^{N-1} f\left(x_i\right)$$
+
+if $N = N-1$ the equation can be rewritten from the solution of the integral as:
+$$F = \frac{b-a}{N-1} \sum_{i=0}^N f\left(x_i\right)$$
+
+But Montecarlo estimations for $N$ random variables $X \sim U(a,b)$ must include the error  $\xi$.<br>
+$\therefore$, the estimator can be expressed with the solution of the integral for all possible errors $\xi \in$ $(0,1]$ $\rightarrow$ $a = b$ :
+
+$$\hat{F}^{N} = \frac{b-a}{N-1} \sum_{i=0}^{N} f\bigg[a + \xi(b-a)\bigg]$$
+
 ![Samplings](https://github.com/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/images/MC_Samplings.png)
 
+<div align="right">
+
+<i>(see [nbrender](README.md#Repo-Visualization) for more details.)</i><br>
+
+</div>
 
 ##### References: 
 [`Newton Raphson`](https://en.wikipedia.org/wiki/Newton%27s_method) [`Taylor-Series`](https://en.wikipedia.org/wiki/Taylor_series) [`Jacobian`](https://en.wikipedia.org/wiki/Jacobian_matrix_and_determinant)
