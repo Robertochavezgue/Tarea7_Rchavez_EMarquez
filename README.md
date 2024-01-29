@@ -1,6 +1,6 @@
-<h2><div align="center"> Nonlinear equation params. estimation </div></h2>
+<h1><div align="center"> Nonlinear equation params. estimation </div></h1>
 
-<Details>
+<Details Open>
 <Summary> <i>Tools:</i> </Summary>
 
 ##### Actions:  [![Repo-Visualization-Badge](https://img.shields.io/badge/Action-Visualization-020521?style=square&logo=github&logoColor=white)](https://githubnext.com/projects/repo-visualization)<br>
@@ -14,27 +14,34 @@
 ##### License:&nbsp;[![Creative Commons BY 3.0](https://img.shields.io/badge/License-CC%20BY%203.0-yellow.svg?style=flat-square)](https://creativecommons.org/licenses/by/3.0/)<br>
 </Details>
 
-<Details>
-
+<div align="center">
+  
+<Details Open>  
 <Summary> <i>Repo Visualization:</i> </Summary>
-
-<a name ="repo-visualization"></a>
-
+  
 [![Repository](https://img.shields.io/badge/Repository-0089D6?style=square&logo=microsoft-azure&logoColor=white)](https://mango-dune-07a8b7110.1.azurestaticapps.net/?repo=EstebanMqz%2FNon-linear-eq-parameter-estimation-Samplings) [![Jupyter](https://img.shields.io/badge/Render-nbviewer-000000?style=square&logo=jupyter&logoColor=orange)](https://nbviewer.org/github/EstebanMqz/Non-linear-equation-Parameter-estimation/blob/main/nonlinear-eq_estimation.ipynb)
 
+<a name ="repo-visualization"></a>
 <img src="diagram.svg" width="280" height="280"><br><br>
 
-</Details>
+</Details> </div>
 
 <div align="right">
-<Details>
-<Summary> <i>Contact:</i> </Summary>
+<Details open>
+<Summary> <i>Business Inquiries:</i> </Summary>
 
-[![Website](https://img.shields.io/badge/Website-ffffff?style=square&logo=opera&logoColor=red)](https://estebanmqz.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-041a80?style=square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/esteban-m65381722210212839/) [![Portfolio](https://img.shields.io/badge/Github-Portfolio-010b38?style=square&logo=github&logoColor=black)](https://estebanmqz.github.io/Portfolio/) [![E-mail](https://img.shields.io/badge/Business-Mail-052ce6?style=square&logo=mail&logoColor=white)](mailto:esteban@esteban.com)
-
-![GitHub Logo](https://github.com/EstebanMqz.png?size=50) [![Github](https://img.shields.io/badge/Github-000000?style=square&logo=github&logoColor=white)](https://github.com/EstebanMqz)
+[<img width="40px" src="https://img.icons8.com/ios/50/0e55b3/resume-website.png">](https://estebanmqz.github.io/EstebanMqz/html/Resume.html)
+[<img width="40px" src="https://img.icons8.com/?size=512&id=MR3dZdlA53te&format=png">](https://www.linkedin.com/in/esteban-m-653817205/)
+[<img width="35px" src="https://img.icons8.com/color/452/whatsapp--v1.png">](https://tinyurl.com/2y86e2wa)
+[<img width="40px" src="https://img.icons8.com/color/452/gmail-new.png">](mailto:emarquez1895@gmail.com)
+[<img width="40px" src="https://cdn3d.iconscout.com/3d/free/thumb/free-github-6343501-5220956.png?f=webp">](https://github.com/EstebanMqz?tab=repositories)
+[<img width="40px" src="https://img.icons8.com/color/452/gitlab.png">](https://gitlab.com/EstebanMqz)
 
 </Details></div>
+
+<b> Job-Related Meetings through LinkedIn:</b><br>
+<i>Connect with me if you need my assistance 24/7 to be alert on WA-Business (pw required).</i>
+<br><br>
 
 ---
 
